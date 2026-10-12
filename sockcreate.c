@@ -5,7 +5,6 @@
 #include<sys/socket.h>
 #include<netdb.h>
 #include<string.h>
-#define MY_PORT "8080"
 
 int main(int argc, char *argv[]) {
     struct addrinfo hints;
