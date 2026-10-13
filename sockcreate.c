@@ -9,7 +9,7 @@
 int main(int argc, char *argv[]) {
     struct addrinfo hints;
     struct addrinfo *result, *rp;
-    int sockfd, status, sair = 0;
+    int sockfd, status, sair = 1;
     char ipstr[INET6_ADDRSTRLEN];
 
     if(argc != 2){
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
             printf("%-5s %-10s %-15s\n", "FD", "PROTOCOLO", "ENDERECO IP");
             printf("%-5d %-10s %-15s\n", sockfd, ipver, ipstr);
             printf("\nDIGITE 1 PARA SAIR\n");
-            while(!sair){
+            while(sair){
                 scanf("%d", &sair);
             }
             return 1; //bind foi um sucesso, pular para fora do loop
