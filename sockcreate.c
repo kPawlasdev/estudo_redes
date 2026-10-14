@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
             while(sair){
                 scanf("%d", &sair);
             }
-            return 1; //bind foi um sucesso, pular para fora do loop
+            break; //bind foi um sucesso, pular para fora do loop
         }
     }
 
