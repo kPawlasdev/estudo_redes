@@ -20,8 +20,9 @@ int main(int argc, char *argv[]) {
     memset(&hints, 0, sizeof hints);
 
     //critérios que serao utilizados posteriormente na funcao getaddrinfo()
-    hints.ai_family = AF_UNSPEC; // ipv6 ou ipv4
+    hints.ai_family = AF_UNSPEC; // qualquer tipo de endereço
     hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = IPPROTO_TCP;
 
     /**
     * buscar por endereços de socket, que sejam compatíveis com os critérios
@@ -63,7 +64,7 @@ int main(int argc, char *argv[]) {
         if(bind(sockfd, rp->ai_addr, rp->ai_addrlen) == 0){
             printf("%-5s %-10s %-15s\n", "FD", "PROTOCOLO", "ENDERECO IP");
             printf("%-5d %-10s %-15s\n", sockfd, ipver, ipstr);
-            printf("\nDIGITE 1 PARA SAIR\n");
+            printf("\nDIGITE 0 PARA SAIR\n");
             while(sair){
                 scanf("%d", &sair);
             }
