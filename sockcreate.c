@@ -69,10 +69,12 @@ int main(int argc, char *argv[]) {
                 scanf("%d", &sair);
             }
             return 1; //bind foi um sucesso, pular para fora do loop
-        }else{
-            perror("Erro");
-            close(sockfd);
         }
+    }
+
+    if(rp==NULL){
+        printf("Falha ao conectar\n");
+        return -1;
     }
 
     close(sockfd);
